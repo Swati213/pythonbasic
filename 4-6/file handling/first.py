@@ -1,0 +1,11 @@
+f = open ('hello.txt','w')
+f.write ("hello how r u")
+f.close()
+f= open ('hello.txt','a')
+f.write ("i m fine..")
+f.close()
+#f = open ('e:hello.txt','a')
+#f.write ("i m better...")
+#f.close()
+#print (f.mode)
+

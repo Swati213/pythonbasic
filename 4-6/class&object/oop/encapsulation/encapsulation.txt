@@ -1,0 +1,127 @@
+Encapsulation___
+An Objaect Oriented Python Program, you can restrict access to method and method and varriable. his can prevent the data from being modified by accident and is know as encapsulation.
+Encapsulation is to the basic of Oops which is used  to store program data in an isolated memory block which kepts our data organised, unique and seperate from other data.
+
+
+encapsulation is implemented by creating object from classes.
+by creating on object we create (allocated)on isolated memory block which help program data pretaining to an entity. this datais accessible all at once and remains unaffected by other object.
+
+		class Robot(object):
+		   def __init__(self):
+		      self.a = 123
+		      self._b = 123
+		      
+
+	obj = Robot()
+	print(obj.a)
+	print(obj._b)
+	
+------------------------------------------
+Inheritance----
+inheritance is the most important concept of object oriented programming. which enable reusability of classes.
+it refernce to defining a new class with little or no modification to an existing class which extract features from existing class.
+the new class is called derived class or child class or sub class and the one from which it inherits is called the base class or parent class or super class.
+
+		Class A  (Parent Class/ Super Class)
+		
+		Class B	(Child Class/ Sub Class/ Drived Class)
+
+Types of Inheritance---
+1. Single Inheritance
+2. Multilevel Inheritance
+3. Multiple Inheritance
+4. Hierarchical Inheritance
+5. Hybrid Iheritance
+
+1. Single Inhritance
+	Class A ----> Class B
+
+2. Multilevel Inheritance
+	Class A ----> Class B ----> Class C
+
+3. Multiple Inheritance
+		Class A 	Class B
+			|	|
+			Class C
+
+4. Hierarchcal Inheritance
+		Class A	
+	Class B	Class C	Class D
+
+5. Hybrid Inheritance
+			Class A
+	Class B				cLASS c
+			cLASS D
+
+***Aggrigration---
+Aggrigration is a concept of object oriented programming which enables a class to use a feature of another class by creating object of a class inside another class. we do not need to inherit a class into another class.
+aggrigration lets a class to use feature of another class with out having paraent and child relationship on them.
+Example...
+class Abc :
+    def m1 (self):
+        print ("m1 of abc executed")
+
+class Xyz:
+    def m2 (self):
+        obj = Abc ()
+        obj . m1 ()
+        print ("m2 of Xyz executed")
+
+
+zz = Xyz()
+zz.m2 ()
+
+----------------------------------------
+What Is Polymorphism?
+Polymorphism(one name many form) is an important feature of class definition in Python that is utilized when you have commonly named methods across classes or subclasses. This allows functions to use objects of any of these polymorphic classes without needing to be aware of distinctions across the classes.
+Polymorphism is the ability to leverage the same interface for different underlying forms such as data types or classes. This permits functions to use entities of different types at different times.
+
+For object-oriented programming in Python, this means that a particular object belonging to a particular class can be used in the same way as if it were a different object belonging to a different class.
+
+Polymorphism allows for flexibility and loose coupling so that code can be extended and easily maintained over time.
+Note : python does not support method overloading.
+
+Creating Polymorphic Classes
+To make use of polymorphism, we’re going to create two distinct classes to use with two distinct objects. Each of these distinct classes need to have an interface that is in common so that they can be used polymorphically, so we will give them methods that are distinct but that have the same name.
+
+
+-------------------------------------------------
+
+Abstraction....
+Abstraction is selecting data from a larger pool to show only the relevant details to the object. It helps to reduce programming complexity and effort. In Java, abstraction is accomplished using Abstract classes and interfaces. It is one of the most important concepts of OOPs.
+
+Abstract Classes in Python....
+
+Abstract classes are classes that contain one or more abstract methods. An abstract method is a method that is declared, but contains no implementation. Abstract classes may not be instantiated, and require subclasses to provide implementations for the abstract methods. Subclasses of an abstract class in Python are not required to implement abstract methods of the parent class.
+		class AbstractClass:
+    
+    			def do_something(self):
+	        		pass
+    
+    
+		class B(AbstractClass):
+		    pass
+		
+		a = AbstractClass()
+		b = B()
+
+
+programe in python---
+
+ from abc import ABC, abstractmethod
+ 
+class AbstractClassExample(ABC):
+    
+    @abstractmethod
+    def do_something(self):
+        print("Some implementation!")
+        
+class AnotherSubclass(AbstractClassExample):
+    def do_something(self):
+        super().do_something()
+        print("The enrichment from AnotherSubclass")
+        
+x = AnotherSubclass()
+x.do_something()
+
+Our example implemented a case of simple inheritance which has nothing to do with an abstract class. In fact, Python on its own doesn't provide abstract classes. Yet, Python comes with a module which provides the infrastructure for defining Abstract Base Classes (ABCs). This module is called - for obvious reasons - abc.

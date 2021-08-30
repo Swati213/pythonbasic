@@ -1,0 +1,12 @@
+import turtle
+turtle.color("red")
+turtle.pensize(3)
+turtle.circle(90)
+turtle.left(70)
+turtle.right(60)
+turtle.forward(10)
+turtle.circle(70)
+turtle.left(45)
+turtle.right(20)
+turtle.forward(20)
+turtle.circle(50)
